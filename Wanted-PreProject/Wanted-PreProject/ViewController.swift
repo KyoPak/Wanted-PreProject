@@ -54,12 +54,19 @@ extension ViewController {
     }
     
     @IBAction func loadAllImageButtonTapped(_ sender: UIButton) {
-        for tag in 0..<5 {
-            guard let request = try? NetworkReqeust(rawValue: tag)?.generateRequest() else {
+        let imageViews = [
+            firstImageView,
+            secondImageView,
+            thirdImageView,
+            fourthImageView,
+            fifthImageView
+        ]
+        
+        for imageView in imageViews {
+            guard let tag = imageView?.tag,
+                    let request = try? NetworkReqeust(rawValue: tag)?.generateRequest() else {
                 return
             }
-            
-            let imageView = self.selectImageView(tag: tag)
             
             networkService.request(request) { data in
                 DispatchQueue.main.async {
