@@ -14,7 +14,7 @@ enum NetworkReqeust: Int {
     case fourthImage
     case fifthImage
     
-    var url: String {
+    private var url: String {
         switch self {
         case .fisrtImage:
             return "https://wallpaperaccess.com/download/europe-4k-1369012"

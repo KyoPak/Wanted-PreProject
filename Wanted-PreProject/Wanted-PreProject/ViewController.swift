@@ -21,13 +21,14 @@ final class ViewController: UIViewController {
     }
     
     private func selectImageView(tag: Int) -> UIImageView? {
-        let imageView = [firstImageView,
-                         secondImageView,
-                         thirdImageView,
-                         fourthImageView,
-                         fifthImageView]
+        let imageView = [
+            firstImageView,
+            secondImageView,
+            thirdImageView,
+            fourthImageView,
+            fifthImageView
+        ]
             .filter { imageView in
-                
                 if tag == imageView.tag {
                     return true
                 }
